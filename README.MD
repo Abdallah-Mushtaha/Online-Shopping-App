@@ -1,33 +1,41 @@
-# 📘 وثيقة المشروع: تطبيق متجر إلكتروني (E-Commerce App)
+# 📘 Project Document: E-Commerce App
 
-## 🔹 1. مقدمة
-تم تطوير هذا المشروع ليكون تطبيق متجر إلكتروني (E-Commerce) مبسط يعمل على نظام تشغيل **Android** باستخدام لغة **Kotlin**.  
-يوفر التطبيق إمكانية تسجيل الدخول والتسجيل، عرض المنتجات والتصنيفات، إضافة المنتجات إلى السلة، إدارة الطلبات، بالإضافة إلى وضع خاصية الإدارة (Admin Mode) لإدارة المنتجات والتصنيفات.
+## 🔹 1. Introduction
 
----
-
-## 🔹 2. الهدف من المشروع
-- توفير واجهة سهلة الاستخدام لشراء المنتجات.
-- دعم المصادقة باستخدام **JWT Token**.
-- دعم دورين للمستخدمين:
-    - **المستخدم العادي (Customer)**: تصفح المنتجات، إضافة منتجات للسلة، عمل طلب.
-    - **المسؤول (Admin)**: إدارة المنتجات والتصنيفات (إضافة، تعديل، حذف).
-- دعم التكامل مع **Google Maps API** لعرض مواقع المنتجات.
+This project was developed as a simplified **E-Commerce** application
+running on **Android** using **Kotlin**.\
+The app provides login and registration, product and category display,
+adding products to the cart, order management, as well as an **Admin
+Mode** for managing products and categories.
 
 ---
 
-## 🔹 3. البيئة المستخدمة
-- **لغة البرمجة**: Kotlin
-- **بيئة التطوير**: Android Studio
-- **واجهة المستخدم**: ViewBinding + XML Layouts
-- **إصدار Android SDK**:
-    - `minSdk = 24`
-    - `targetSdk = 35`
-    - `compileSdk = 36`
+## 🔹 2. Project Objective
+
+- Provide an easy-to-use interface for purchasing products.\
+- Support authentication using **JWT Token**.\
+- Support two user roles:
+  - **Customer**: Browse products, add products to cart, place
+    orders.\
+  - **Admin**: Manage products and categories (add, edit, delete).\
+- Support integration with **Google Maps API** to display product
+  locations.
 
 ---
 
-## 🔹 4. المكتبات (Dependencies)
+## 🔹 3. Environment
+
+- **Programming Language**: Kotlin\
+- **IDE**: Android Studio\
+- **UI**: ViewBinding + XML Layouts\
+- **Android SDK Versions**:
+  - `minSdk = 24`\
+  - `targetSdk = 35`\
+  - `compileSdk = 36`
+
+---
+
+## 🔹 4. Dependencies
 
 ```kotlin
 // Core
@@ -62,60 +70,57 @@ testImplementation("junit:junit:4.13.2")
 androidTestImplementation("androidx.test.ext:junit:1.1.5")
 androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 ```
-مكتبة Glide
 
-مكتبة قوية لتحميل وعرض الصور من الإنترنت أو الذاكرة.
+**Glide Library**\
+A powerful library for loading and displaying images from the internet
+or memory.\
+Supports caching to speed up image display.\
+Easily integrates with RecyclerView or ImageView.
 
-تدعم الكاش (Caching) لتسريع عرض الصور.
+**Glide Compiler (Annotation Processor)**\
+Used with Glide to generate custom code at compile-time.\
+Helps improve performance and enable additional features (like
+GlideApp).
 
-سهلة الدمج مع RecyclerView أو ImageView.
-
- Glide Compiler (Annotation Processor)
-
-تُستخدم مع Glide لتوليد كود مخصص أثناء الـ compile-time.
-تساعد في تحسين الأداء وتمكين ميزات إضافية (زي GlideApp).
-
- مكتبة Gson (من Google)
-
-لتحويل البيانات بين JSON ↔ Objects (Java/Kotlin).
-
-مثال: لما تجيب بيانات من API بصيغة JSON، تقدر تستخدم Gson لتحويلها مباشرة إلى كائن (Model Class).
+**Gson Library (from Google)**\
+For converting data between JSON ↔ Objects (Java/Kotlin).\
+Example: When fetching data from an API in JSON format, Gson can
+directly convert it into a Model Class.
 
 ---
 
-## 🔹 5. بنية المشروع (Structure)
+## 🔹 5. Project Structure
 
-```
-com.testing.finalprojects
-│
-├── Api
-│   └── Api.kt                 // روابط الـ Endpoints
-│
-├── Model
-│   ├── Category.kt             // موديل التصنيف
-│   ├── Product.kt              // موديل المنتج
-│   └── User.kt                 // موديل المستخدم
-│
-├── fragments
-│   ├── ViewProductsCategory.kt // عرض المنتجات ضمن تصنيف
-│   ├── CartFragment.kt         // إدارة السلة
-│   ├── OrdersFragment.kt       // عرض الطلبات
-│   └── AdminDashboardFragment.kt
-│
-├── adapter
-│   ├── CategoryAdapter.kt      // RecyclerView للتصنيفات
-│   └── ProductAdapter.kt       // RecyclerView للمنتجات
-│
-├── LoginActivity.kt            // تسجيل الدخول
-├── CreatAccount.kt             // إنشاء حساب
-└── MainActivity.kt             // إدارة الواجهات والملاحة
-```
+    com.testing.finalprojects
+    │
+    ├── Api
+    │   └── Api.kt                 // Endpoints
+    │
+    ├── Model
+    │   ├── Category.kt             // Category model
+    │   ├── Product.kt              // Product model
+    │   └── User.kt                 // User model
+    │
+    ├── fragments
+    │   ├── ViewProductsCategory.kt // Show products by category
+    │   ├── CartFragment.kt         // Manage cart
+    │   ├── OrdersFragment.kt       // Show orders
+    │   └── AdminDashboardFragment.kt
+    │
+    ├── adapter
+    │   ├── CategoryAdapter.kt      // RecyclerView for categories
+    │   └── ProductAdapter.kt       // RecyclerView for products
+    │
+    ├── LoginActivity.kt            // Login
+    ├── CreatAccount.kt             // Create account
+    └── MainActivity.kt             // Manage UI and navigation
 
 ---
 
-## 🔹 6. الـ Models
+## 🔹 6. Models
 
 ### ✅ Category
+
 ```kotlin
 data class Category(
     var id: Long,
@@ -125,6 +130,7 @@ data class Category(
 ```
 
 ### ✅ Product
+
 ```kotlin
 data class Product(
     val id: String,
@@ -145,6 +151,7 @@ data class Product(
 ```
 
 ### ✅ User
+
 ```kotlin
 data class User(
     val id: String,
@@ -158,12 +165,13 @@ data class User(
 
 ---
 
-## 🔹 7. المصادقة (Authentication)
+## 🔹 7. Authentication
 
-### 🔑 تسجيل الدخول (LoginActivity)
-- إرسال البريد الإلكتروني وكلمة المرور للـ API.
-- استقبال **JWT Token**.
-- استخراج **UserId** و **Role** من الـ Token.
+### 🔑 Login (LoginActivity)
+
+- Send email and password to the API.\
+- Receive **JWT Token**.\
+- Extract **UserId** and **Role** from the token.
 
 ```kotlin
 val userId = json.optString("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier", "")
@@ -172,47 +180,55 @@ val role = json.optString("http://schemas.microsoft.com/ws/2008/06/identity/clai
 
 ---
 
-## 🔹 8. واجهة المستخدم (UI)
+## 🔹 8. User Interface (UI)
 
 - **BottomNavigationView**:
-    - وضع خاص بالـ Admin → يظهر أزرار (Dashboard, Add Product, Manage Categories).
-    - وضع خاص بالـ Customer → يظهر أزرار (Home, Cart, Orders).
-
+  - Admin Mode → shows (Dashboard, Add Product, Manage Categories).\
+  - Customer Mode → shows (Home, Cart, Orders).
 - **RecyclerView + Adapter**:
-    - `CategoryAdapter` لعرض التصنيفات.
-    - `ProductAdapter` لعرض المنتجات مع دعم أوضاع الأزرار:
-        - **CLIENT_HOME** → زر (Add).
-        - **CLIENT_CART** → أزرار زيادة/إنقاص الكمية + حذف.
-        - **ADMIN** → زر (Delete).
+  - `CategoryAdapter` to display categories.\
+  - `ProductAdapter` to display products with button modes:
+    - **CLIENT_HOME** → Add button.\
+    - **CLIENT_CART** → Increase/Decrease quantity + Delete.\
+    - **ADMIN** → Delete button.
 
 ---
 
 ## 🔹 9. Google Maps Integration
-- عرض موقع المنتج على الخريطة باستخدام **Lat / Lng**.
-- تم استخدام:
+
+- Display product location on the map using **Lat / Lng**.\
+- Using:\
+
 ```kotlin
 implementation("com.google.android.gms:play-services-maps:18.2.0")
 implementation("com.google.android.gms:play-services-location:21.0.1")
 ```
-- التنقل من المنتج → فتح الخريطة مع تمرير `lat` و `lng`.
+
+- Navigate from product → open map with `lat` and `lng`.
 
 ---
 
-## 🔹 10. السلة والطلبات (Cart & Orders)
-- السلة تتم إدارتها باستخدام `SharedPreferences` (محليًا).
-- الطلبات تتم من خلال استدعاء API:
-    - `Cart/add-to-cart`
-    - `Cart/get-cart`
-    - `Orders/checkout`
-    - `Orders/GetOrdersByCustomer`
+## 🔹 10. Cart & Orders
+
+- Cart is managed using `SharedPreferences` (locally).\
+- Orders are managed via API calls:
+  - `Cart/add-to-cart`\
+  - `Cart/get-cart`\
+  - `Orders/checkout`\
+  - `Orders/GetOrdersByCustomer`
 
 ---
 
-## 🔹 11. الخاتمة
-هذا المشروع يجمع بين:
-- **إدارة الحسابات والمصادقة باستخدام JWT**.
-- **إدارة المنتجات والتصنيفات**.
-- **استخدام Google Maps API**.
-- **وضعيتين للمستخدم (Admin / Customer)**.
+## 🔹 11. Conclusion
 
-وبالتالي يعتبر مشروع متكامل لتطبيق متجر إلكتروني مصغر.
+This project combines:\
+
+- **Account management and JWT authentication**.\
+- **Product and category management**.\
+- **Google Maps API integration**.\
+- **Two user modes (Admin / Customer)**.
+
+Thus, it represents a complete mini e-commerce application.
+
+This application was developed by Eng.Abdullah Mushtaha and Eng. Moath Ashour
+under the supervision of Eng.Hiyam Abu Hasirah.
