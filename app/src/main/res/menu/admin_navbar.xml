@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:id="@+id/adminDashboardFragment"
+        android:icon="@drawable/admin"
+        android:title="Admin" />
+
+
+    <item
+        android:id="@+id/addProductFragment"
+        android:icon="@drawable/add_product"
+        android:title="Add Product" />
+
+    <item
+        android:id="@+id/admin_show_productes"
+        android:icon="@drawable/box"
+        android:title="Productes" />
+
+
+    <item
+        android:id="@+id/logout"
+        android:icon="@drawable/logout"
+        android:title="Logout" />
+
+</menu>

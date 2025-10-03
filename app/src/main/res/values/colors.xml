@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="Suc_color">#3B973B</color>
+    <color name="Del_color">#D32727</color>
+    <color name="Gray_color">#ABABAB</color>
+    <color name="splash_background_color">#FFFFFF</color>
+    <color name="app_name_color">#212121</color>
+    <color name="primary_brand_color">#4177FF</color>
+    <color name="blue_active">#2196F3</color>
+    <color name="gray_inactive">#757575</color>
+</resources>

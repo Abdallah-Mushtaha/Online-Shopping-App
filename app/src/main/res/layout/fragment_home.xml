@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F2F0F0"
+    android:fitsSystemWindows="true"
+    tools:context=".fragments.HomeFragment">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <SearchView
+            android:id="@+id/searchView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/rounded_search_background"
+            android:iconifiedByDefault="false"
+            android:queryHint="Find a product..."
+            android:queryBackground="@android:color/transparent"
+            android:searchIcon="@drawable/search"
+            android:goIcon="@null" />
+
+        <TextView
+            android:id="@+id/HomeTitle"
+            android:text="Most popular"
+            android:textSize="21sp"
+            android:textStyle="bold"
+            android:textColor="#666666"
+            android:layout_marginBottom="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="2dp"
+            android:background="#595959FF"
+/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerMostOrderedProducts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:paddingBottom="16dp"
+            tools:listitem="@layout/item_product_card"/>
+        <TextView
+            android:id="@+id/tvHomeTitle"
+            android:text="Products"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#666666"
+            android:layout_marginBottom="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#595959"
+            android:layout_marginBottom="3dp"
+            />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerProducts"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingBottom="16dp"
+            tools:listitem="@layout/item_product_card"/>
+
+    </LinearLayout>
+
+</FrameLayout>

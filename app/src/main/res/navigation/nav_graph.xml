@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.testing.finalprojects.fragments.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home"/>
+
+    <fragment
+        android:id="@+id/categoriesFragment"
+        android:name="com.testing.finalprojects.fragments.CategoriesFragment"
+        tools:layout="@layout/fragment_categories">
+        <action
+            android:id="@+id/action_categoriesFragment_to_viewProductsCategory"
+            app:destination="@id/viewProductsCategory" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/viewProductsCategory"
+        android:name="com.testing.finalprojects.fragments.ViewProductsCategory"
+        android:label="fragment_view_products_category"
+        tools:layout="@layout/fragment_view_products_category">
+        <argument
+            android:name="productsJson"
+            app:argType="string" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="com.testing.finalprojects.fragments.CartFragment"
+        android:label="Cart"
+        tools:layout="@layout/fragment_cart" />
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.testing.finalprojects.fragments.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile">
+
+        <action
+            android:id="@+id/action_profileFragment_to_purchasedFragment"
+            app:destination="@id/purchasedFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/adminDashboardFragment"
+        android:name="com.testing.finalprojects.fragments.AdminDashboardFragment"
+        android:label="Admin"
+        tools:layout="@layout/fragment_admin_dashboard" />
+
+    <fragment
+        android:id="@+id/addProductFragment"
+        android:name="com.testing.finalprojects.fragments.addProductFragment"
+        android:label="Add Product"
+        tools:layout="@layout/fragment_add_product" >
+        <action
+            android:id="@+id/action_addProductFragment_to_selectLocationFragment"
+            app:destination="@id/selectLocationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/admin_show_productes"
+        android:name="com.testing.finalprojects.fragments.AdminShowProductes"
+        android:label="Add Product"
+        tools:layout="@layout/fragment_admin_show_productes" />
+    <fragment
+        android:id="@+id/purchasedFragment"
+        android:name="com.testing.finalprojects.fragments.PurchasedFragment"
+        android:label="purchasedFragment"
+        tools:layout="@layout/fragment_purchased" />
+
+    <fragment
+        android:id="@+id/selectLocationFragment"
+        android:name="com.testing.finalprojects.fragments.SelectLocationFragment"
+        android:label="SelectLocationFragment"
+        tools:layout="@layout/fragment_select_location" />
+</navigation>

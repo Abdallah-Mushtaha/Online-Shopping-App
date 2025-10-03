@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- لما يكون الـ item محدد -->
+    <item android:color="@color/blue_active" android:state_checked="true"/>
+
+    <!-- باقي الحالات -->
+    <item android:color="@android:color/transparent"/>
+</selector>
